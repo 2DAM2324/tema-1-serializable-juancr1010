@@ -30,14 +30,13 @@ import org.w3c.dom.Document;
 
 import java.util.ArrayList;
 import Modelo.Piloto;
-import java.io.Serializable;
 
 
 /**
  *
  * @author johnm
  */
-public class EquipoCarreras implements Serializable{
+public class EquipoCarreras {
     private String idEquipo;
     private String nombre;
     private ArrayList<Piloto> pilotos;

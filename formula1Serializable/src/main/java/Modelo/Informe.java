@@ -4,13 +4,11 @@
  */
 package Modelo;
 
-import java.io.Serializable;
-
 /**
  *
  * @author johnm
  */
-public class Informe implements Serializable {
+public class Informe {
     private String idInforme;
     private String descripcion;
     private Genera genera_en_informe;

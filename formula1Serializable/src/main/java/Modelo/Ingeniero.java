@@ -5,14 +5,13 @@
 package Modelo;
 
 import Modelo.Coche;
-import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author johnm
  */
-public class Ingeniero implements Serializable {
+public class Ingeniero {
     private String idIngeniero;
     private String fechaNacimiento;
     private double sueldo;

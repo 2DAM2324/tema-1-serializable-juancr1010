@@ -6,14 +6,13 @@ package Modelo;
 
 import Modelo.Piloto;
 import Modelo.Ingeniero;
-import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author johnm
  */
-public class Coche implements Serializable {
+public class Coche {
     private String idCoche;
     private String modelo;
     private String marca;

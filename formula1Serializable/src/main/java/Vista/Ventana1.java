@@ -244,12 +244,10 @@ public class Ventana1 extends javax.swing.JFrame {
         jButton_guardar_equipoCarreras = new javax.swing.JButton();
         jButton_cancelar_equipoCarreras = new javax.swing.JButton();
         jButton_guardarModificacion_equipoCarreras = new javax.swing.JButton();
-        jButton_leer_xml = new javax.swing.JButton();
-        jButton_reescribir_xml = new javax.swing.JButton();
         jButton_detalles_EquipoCarreras = new javax.swing.JButton();
         jComboBox_anadirPiloto_EquiposCarreras = new javax.swing.JComboBox<>();
         jButton_anadirPiloto_EquipoCarreras = new javax.swing.JButton();
-        jButton_serializarProyecto = new javax.swing.JButton();
+        jButton1_serializarProyecto = new javax.swing.JButton();
         jButton_deserializarProyecto = new javax.swing.JButton();
         jPanel_piloto = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -398,25 +396,6 @@ public class Ventana1 extends javax.swing.JFrame {
             }
         });
 
-        jButton_leer_xml.setText("LeerXMLFormula1");
-        jButton_leer_xml.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_leer_xmlActionPerformed(evt);
-            }
-        });
-
-        jButton_reescribir_xml.setText("ReescribirXML");
-        jButton_reescribir_xml.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton_reescribir_xmlMouseClicked(evt);
-            }
-        });
-        jButton_reescribir_xml.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_reescribir_xmlActionPerformed(evt);
-            }
-        });
-
         jButton_detalles_EquipoCarreras.setText("Ver detalles de un equipo");
         jButton_detalles_EquipoCarreras.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -447,14 +426,14 @@ public class Ventana1 extends javax.swing.JFrame {
     });
     jButton_anadirPiloto_EquipoCarreras.setVisible(false);
 
-    jButton_serializarProyecto.setText("SerializarProyecto");
-    jButton_serializarProyecto.addMouseListener(new java.awt.event.MouseAdapter() {
+    jButton1_serializarProyecto.setText("Serializar Proyecto");
+    jButton1_serializarProyecto.addMouseListener(new java.awt.event.MouseAdapter() {
         public void mouseClicked(java.awt.event.MouseEvent evt) {
-            jButton_serializarProyectoMouseClicked(evt);
+            jButton1_serializarProyectoMouseClicked(evt);
         }
     });
 
-    jButton_deserializarProyecto.setText("Leer Objetos Serializables");
+    jButton_deserializarProyecto.setText("Deserializar Proyecto");
     jButton_deserializarProyecto.addMouseListener(new java.awt.event.MouseAdapter() {
         public void mouseClicked(java.awt.event.MouseEvent evt) {
             jButton_deserializarProyectoMouseClicked(evt);
@@ -466,52 +445,47 @@ public class Ventana1 extends javax.swing.JFrame {
     jPanel_equipoCarrerasLayout.setHorizontalGroup(
         jPanel_equipoCarrerasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(jPanel_equipoCarrerasLayout.createSequentialGroup()
-            .addGroup(jPanel_equipoCarrerasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+            .addGroup(jPanel_equipoCarrerasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                 .addGroup(jPanel_equipoCarrerasLayout.createSequentialGroup()
-                    .addContainerGap()
+                    .addContainerGap(368, Short.MAX_VALUE)
                     .addGroup(jPanel_equipoCarrerasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton_detalles_EquipoCarreras))
-                    .addGap(18, 18, 18)
-                    .addGroup(jPanel_equipoCarrerasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButton_modificar_equipoCarreras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton_borrar_equipoCarreras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton_guardar_equipoCarreras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(jPanel_equipoCarrerasLayout.createSequentialGroup()
-                    .addGap(27, 27, 27)
-                    .addGroup(jPanel_equipoCarrerasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel_equipoCarrerasLayout.createSequentialGroup()
-                            .addComponent(jComboBox_anadirPiloto_EquiposCarreras, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(35, 35, 35)
-                            .addComponent(jButton_anadirPiloto_EquipoCarreras)
-                            .addGap(32, 32, 32))
-                        .addGroup(jPanel_equipoCarrerasLayout.createSequentialGroup()
-                            .addGroup(jPanel_equipoCarrerasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel_nombre_equipoCarreras)
-                                .addComponent(jLabel_idEquipo_equipoCarreras))
-                            .addGap(53, 53, 53)
-                            .addGroup(jPanel_equipoCarrerasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField_idEquipo_equipoCarreras, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
-                                .addComponent(jTextField_nombre_equipoCarreras))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel_equipoCarrerasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jButton_cancelar_equipoCarreras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton_guardarModificacion_equipoCarreras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGap(4, 4, 4)))))
-            .addContainerGap(43, Short.MAX_VALUE))
-        .addGroup(jPanel_equipoCarrerasLayout.createSequentialGroup()
-            .addContainerGap()
-            .addGroup(jPanel_equipoCarrerasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel_equipoCarrerasLayout.createSequentialGroup()
-                    .addComponent(jButton_leer_xml)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton_serializarProyecto, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(102, 102, 102))
-                .addGroup(jPanel_equipoCarrerasLayout.createSequentialGroup()
-                    .addComponent(jButton_reescribir_xml)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton_deserializarProyecto)
-                    .addGap(90, 90, 90))))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_equipoCarrerasLayout.createSequentialGroup()
+                            .addComponent(jButton1_serializarProyecto, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(16, 16, 16))
+                        .addComponent(jButton_deserializarProyecto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel_equipoCarrerasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel_equipoCarrerasLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel_equipoCarrerasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton_detalles_EquipoCarreras))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel_equipoCarrerasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton_modificar_equipoCarreras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton_borrar_equipoCarreras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton_guardar_equipoCarreras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel_equipoCarrerasLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel_equipoCarrerasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel_equipoCarrerasLayout.createSequentialGroup()
+                                .addComponent(jComboBox_anadirPiloto_EquiposCarreras, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(35, 35, 35)
+                                .addComponent(jButton_anadirPiloto_EquipoCarreras)
+                                .addGap(32, 32, 32))
+                            .addGroup(jPanel_equipoCarrerasLayout.createSequentialGroup()
+                                .addGroup(jPanel_equipoCarrerasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel_nombre_equipoCarreras)
+                                    .addComponent(jLabel_idEquipo_equipoCarreras))
+                                .addGap(53, 53, 53)
+                                .addGroup(jPanel_equipoCarrerasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextField_idEquipo_equipoCarreras, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+                                    .addComponent(jTextField_nombre_equipoCarreras))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                                .addGroup(jPanel_equipoCarrerasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jButton_cancelar_equipoCarreras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton_guardarModificacion_equipoCarreras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(4, 4, 4))))))
+            .addContainerGap(44, Short.MAX_VALUE))
     );
     jPanel_equipoCarrerasLayout.setVerticalGroup(
         jPanel_equipoCarrerasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -544,13 +518,9 @@ public class Ventana1 extends javax.swing.JFrame {
                 .addComponent(jComboBox_anadirPiloto_EquiposCarreras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(jButton_anadirPiloto_EquipoCarreras))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-            .addGroup(jPanel_equipoCarrerasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jButton_leer_xml)
-                .addComponent(jButton_serializarProyecto))
+            .addComponent(jButton1_serializarProyecto)
             .addGap(26, 26, 26)
-            .addGroup(jPanel_equipoCarrerasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jButton_reescribir_xml)
-                .addComponent(jButton_deserializarProyecto))
+            .addComponent(jButton_deserializarProyecto)
             .addGap(20, 20, 20))
     );
 
@@ -1109,6 +1079,11 @@ public class Ventana1 extends javax.swing.JFrame {
     });
 
     jButton_borrar_ingeniero.setText("Borrar");
+    jButton_borrar_ingeniero.addMouseListener(new java.awt.event.MouseAdapter() {
+        public void mouseClicked(java.awt.event.MouseEvent evt) {
+            jButton_borrar_ingenieroMouseClicked(evt);
+        }
+    });
     jButton_borrar_ingeniero.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             jButton_borrar_ingenieroActionPerformed(evt);
@@ -1268,7 +1243,12 @@ public class Ventana1 extends javax.swing.JFrame {
         idEquipo = jTextField_idEquipo_equipoCarreras.getText();
         nombre = jTextField_nombre_equipoCarreras.getText();
         EquipoCarreras unEquipo = new EquipoCarreras(idEquipo, nombre);
-        this.miControlador.anadirEquipoCarreras(unEquipo);
+        if(this.miControlador.comprobarSiEquipoExiste(unEquipo) == false){
+            this.miControlador.anadirEquipoCarreras(unEquipo);
+        }else{
+            JOptionPane.showMessageDialog(null, "El equipo ya existe en el sistema, introduzca otro ID");
+        }
+        
         this.miControlador.mostrarEquiposCarreras();
         
         this.actualizarTablaEquipos();
@@ -1281,7 +1261,9 @@ public class Ventana1 extends javax.swing.JFrame {
     
     private void jButton_modificar_equipoCarrerasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_modificar_equipoCarrerasMouseClicked
         // TODO add your handling code here:
+     this.traerPilotosControladorVista();
      int fila = jTable_equipoCarreras.getSelectedRow();
+     
     
      jButton_guardarModificacion_equipoCarreras.setVisible(true);
      jComboBox_anadirPiloto_EquiposCarreras.setVisible(true);
@@ -1302,10 +1284,22 @@ public class Ventana1 extends javax.swing.JFrame {
         String nombre = "";
         idEquipo = jTextField_idEquipo_equipoCarreras.getText();
         nombre = jTextField_nombre_equipoCarreras.getText();
-        this.misEquipos.get(fila).setIdEquipo(idEquipo);
-        this.misEquipos.get(fila).setIdEquipo(nombre);
+        EquipoCarreras unEquipo = new EquipoCarreras(idEquipo, nombre);
+        if((idEquipo.equals(this.misEquipos.get(fila).getIdEquipo()))){
+            this.misEquipos.get(fila).setIdEquipo(idEquipo);
+            this.misEquipos.get(fila).setIdEquipo(nombre);
         
-        this.miControlador.modificarEquipoCarreras(idEquipo, nombre, fila);
+            this.miControlador.modificarEquipoCarreras(idEquipo, nombre, fila);
+        }else if(this.miControlador.comprobarSiEquipoExiste(unEquipo)){
+            JOptionPane.showMessageDialog(null, "El equipo ya existe en el sistema, introduzca otro ID");
+        }else{
+            this.misEquipos.get(fila).setIdEquipo(idEquipo);
+            this.misEquipos.get(fila).setIdEquipo(nombre);
+        
+            this.miControlador.modificarEquipoCarreras(idEquipo, nombre, fila);
+        }
+        
+        
         
         this.actualizarTablaEquipos();
         
@@ -1331,32 +1325,9 @@ public class Ventana1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton_borrar_equipoCarrerasActionPerformed
 
-    private void jButton_leer_xmlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_leer_xmlActionPerformed
-        // TODO add your handling code here:
-        this.miControlador.leerXML();
-        /*for(int i = 0; i < this.miControlador.getEquipos().size(); i++){
-            this.miControlador.getEquipos().get(i).mostrarEquipo();
-        }*/
-        for(int i = 0; i < this.miControlador.getPilotos().size(); i++){
-            //this.miControlador.getPilotos().get(i).mostrarPiloto();
-            this.miControlador.getIngenieros().get(i).mostrarIngeniero();
-        }
-        this.traerDatosControladorVista();
-        this.actualizarTablasVista();
-    }//GEN-LAST:event_jButton_leer_xmlActionPerformed
-
     private void jButton_modificar_equipoCarrerasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_modificar_equipoCarrerasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton_modificar_equipoCarrerasActionPerformed
-
-    private void jButton_reescribir_xmlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_reescribir_xmlActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton_reescribir_xmlActionPerformed
-
-    private void jButton_reescribir_xmlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_reescribir_xmlMouseClicked
-        // TODO add your handling code here:
-        this.miControlador.escribirXML(misEquipos);
-    }//GEN-LAST:event_jButton_reescribir_xmlMouseClicked
 
     private void jButton_guardar_equipoCarrerasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_guardar_equipoCarrerasActionPerformed
         // TODO add your handling code here:
@@ -1366,8 +1337,12 @@ public class Ventana1 extends javax.swing.JFrame {
         // TODO add your handling code here:
         int fila = jTable_equipoCarreras.getSelectedRow();
         String cadena = "Los Pilotos que pertenecen a este equipo son:\n";
-        for(Piloto p : this.miControlador.getEquipos().get(fila).getPilotos()){
-            cadena += "ID: " + p.getIdPiloto() + " Nombre: " + p.getNombre() + "\n";
+        if(this.miControlador.getEquipos().get(fila).getPilotos() != null){
+            for(Piloto p : this.miControlador.getEquipos().get(fila).getPilotos()){
+                if(p != null){
+                    cadena += "ID: " + p.getIdPiloto() + " Nombre: " + p.getNombre() + "\n";
+                }
+            }
         }
         JOptionPane.showMessageDialog(null, cadena);
     }//GEN-LAST:event_jButton_detalles_EquipoCarrerasMouseClicked
@@ -1420,7 +1395,12 @@ public class Ventana1 extends javax.swing.JFrame {
         nombre = jTextField_nombre_piloto.getText();
         edad = Integer.parseInt(jTextField_edad_piloto.getText());
         Piloto unPiloto = new Piloto(idPiloto, nombre, edad);
-        this.miControlador.getPilotos().add(unPiloto);
+        
+        if(this.miControlador.comprobarSiPilotoExiste(unPiloto) == false){
+            this.miControlador.getPilotos().add(unPiloto);
+        }else{
+            JOptionPane.showMessageDialog(null, "El piloto ya existe en el sistema, introduzca otro ID");
+        }
         this.miControlador.mostrarEquiposCarreras();
         
         this.actualizarTablaPilotos();
@@ -1439,12 +1419,23 @@ public class Ventana1 extends javax.swing.JFrame {
         idPiloto = jTextField_idPiloto_piloto.getText();
         nombre = jTextField_nombre_piloto.getText();
         edad = Integer.parseInt(jTextField_edad_piloto.getText());
-        this.misPilotos.get(fila).setIdPiloto(idPiloto);
-        this.misPilotos.get(fila).setNombre(nombre);
-        this.misPilotos.get(fila).setEdad(edad);
+        Piloto unPiloto = new Piloto(idPiloto, nombre, edad);
         
-        this.miControlador.modificarPiloto(idPiloto, nombre, edad, fila);
+        if((idPiloto.equals(this.misPilotos.get(fila).getIdPiloto()))){
+            this.misPilotos.get(fila).setIdPiloto(idPiloto);
+            this.misPilotos.get(fila).setNombre(nombre);
+            this.misPilotos.get(fila).setEdad(edad);
         
+            this.miControlador.modificarPiloto(idPiloto, nombre, edad, fila);
+        }else if(this.miControlador.comprobarSiPilotoExiste(unPiloto)){
+            JOptionPane.showMessageDialog(null, "El piloto ya existe en el sistema, introduzca otro ID");
+        }else{
+            this.misPilotos.get(fila).setIdPiloto(idPiloto);
+            this.misPilotos.get(fila).setNombre(nombre);
+            this.misPilotos.get(fila).setEdad(edad);
+        
+            this.miControlador.modificarPiloto(idPiloto, nombre, edad, fila);
+        }
         this.actualizarTablaPilotos();
         
         this.jButton_guardarModificacion_pilotos.setVisible(false);
@@ -1516,11 +1507,25 @@ public class Ventana1 extends javax.swing.JFrame {
     private void jButton_borrar_pilotoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_borrar_pilotoMouseClicked
         // TODO add your handling code here:
         int fila = jTable_piloto.getSelectedRow();
+        Informe aux = null;
+        for(EquipoCarreras e: this.miControlador.getEquipos()){
+            for(int i = 0; i < e.getPilotos().size(); i++){
+                if(e.getPilotos().get(i).getIdPiloto().equals(this.miControlador.getPilotos().get(fila).getIdPiloto())){
+                    e.getPilotos().remove(e.getPilotos().get(i));
+                }
+            }
+        }
+        for(Informe f: this.miControlador.getInformes()){
+            if(f.getIdInforme().equals(this.miControlador.getPilotos().get(fila).getGenera_en_piloto().getInforme_genera().getIdInforme())){
+                aux = f;
+            }
+        }
         
+        this.miControlador.getInformes().remove(aux);
         this.miControlador.borrarPiloto(fila);
         //this.misEquipos.remove(fila);
         
-        this.actualizarTablaPilotos();
+        this.actualizarTablasVista();
     }//GEN-LAST:event_jButton_borrar_pilotoMouseClicked
 
     private void jButton_generarInforme_PilotoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_generarInforme_PilotoMouseClicked
@@ -1553,10 +1558,18 @@ public class Ventana1 extends javax.swing.JFrame {
         int fila = jTable_piloto.getSelectedRow();
         String cadena = "El piloto usa el coche: \n";
         
-        cadena += "ID: " + this.miControlador.getPilotos().get(fila).getCoche_piloto().getIdCoche() + "\n";
-        cadena += "Informe generado por el piloto: \n";
-        cadena += this.miControlador.getPilotos().get(fila).getGenera_en_piloto().getInforme_genera().getIdInforme() + "\n";
-        
+        if(this.miControlador.getPilotos().get(fila).getCoche_piloto() != null){
+            cadena += "ID: " + this.miControlador.getPilotos().get(fila).getCoche_piloto().getIdCoche() + "\n";
+            
+        }else{
+            cadena = "El piloto no tiene asignado ningún coche.\n";
+        }
+        if(this.miControlador.getPilotos().get(fila).getGenera_en_piloto() != null){
+            cadena += "Informe generado por el piloto: \n";
+            cadena += this.miControlador.getPilotos().get(fila).getGenera_en_piloto().getInforme_genera().getIdInforme() + "\n";
+        }else{
+            cadena += "El piloto no ha generado ningún informe aun.";
+        }
         JOptionPane.showMessageDialog(null, cadena);
     }//GEN-LAST:event_jButton_detalles_PilotoMouseClicked
 
@@ -1567,8 +1580,21 @@ public class Ventana1 extends javax.swing.JFrame {
         String idInforme = jTextField_idInforme_informe.getText();
         String descripcion = jTextField_descripcion_informe.getText();
         
-        this.miControlador.getInformes().get(fila).setIdInforme(idInforme);
-        this.miControlador.getInformes().get(fila).setDescripcion(descripcion);
+        
+        
+        Informe unInforme = new Informe(idInforme, descripcion);
+        if((idInforme.equals(this.misInformes.get(fila).getIdInforme()))){
+            this.miControlador.getInformes().get(fila).setIdInforme(idInforme);
+            this.miControlador.getInformes().get(fila).setDescripcion(descripcion);
+            
+        }else if(this.miControlador.comprobarSiInformeExiste(unInforme)){
+            JOptionPane.showMessageDialog(null, "El informe ya existe en el sistema, introduzca otro ID");
+        }else{
+            this.miControlador.getInformes().get(fila).setIdInforme(idInforme);
+            this.miControlador.getInformes().get(fila).setDescripcion(descripcion);
+        
+        }
+        
         
         jLabel_idInforme_informe.setVisible(false);
         jTextField_idInforme_informe.setVisible(false);
@@ -1595,6 +1621,7 @@ public class Ventana1 extends javax.swing.JFrame {
     private void jButton_borrar_informeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_borrar_informeMouseClicked
         // TODO add your handling code here:
         int fila = jTable_informe.getSelectedRow();
+        this.misInformes.get(fila).getGenera_en_informe().setInforme_genera(null);
         this.miControlador.borrarInforme(fila);
     }//GEN-LAST:event_jButton_borrar_informeMouseClicked
 
@@ -1607,7 +1634,14 @@ public class Ventana1 extends javax.swing.JFrame {
         modelo = jTextField_modelo_coche.getText();
         marca = jTextField_marca_coche.getText();
         Coche unCoche = new Coche(idCoche, modelo, marca);
-        this.miControlador.getCoches().add(unCoche);
+        
+        if(this.miControlador.comprobarSiCocheExiste(unCoche) == false){
+            this.miControlador.getCoches().add(unCoche);
+        }else{
+            JOptionPane.showMessageDialog(null, "El coche ya existe en el sistema, introduzca otro ID");
+        }
+        
+        
         //this.miControlador.mostrarEquiposCarreras();
         
         this.actualizarTablasVista();
@@ -1671,6 +1705,20 @@ public class Ventana1 extends javax.swing.JFrame {
         // TODO add your handling code here:
         int fila = jTable_coche.getSelectedRow();
         
+        for(Piloto p: this.miControlador.getPilotos()){
+            if(p.getCoche_piloto().getIdCoche().equals(this.miControlador.getCoches().get(fila).getIdCoche())){
+                p.setCoche_piloto(null);
+            }
+        }
+        
+        for(Ingeniero i: this.miControlador.getIngenieros()){
+            for(int j = 0; j < i.getCoche_ingeniero().size(); j++){
+                if(i.getCoche_ingeniero().get(j).getIdCoche().equals(this.miControlador.getCoches().get(fila).getIdCoche())){
+                    i.getCoche_ingeniero().remove(i.getCoche_ingeniero().get(j));
+                }
+            }
+        }
+        
         this.miControlador.borrarCoche(fila);
         
         actualizarTablasVista();
@@ -1704,8 +1752,11 @@ public class Ventana1 extends javax.swing.JFrame {
         // TODO add your handling code here:
         int fila = jTable_coche.getSelectedRow();
         String cadena = "El coche está siendo usado por el piloto: \n";
-        
-        cadena += "ID: " + this.miControlador.getCoches().get(fila).getPiloto().getIdPiloto()+ "\n";
+        if(this.miControlador.getCoches().get(fila).getPiloto() != null){
+            cadena += "ID: " + this.miControlador.getCoches().get(fila).getPiloto().getIdPiloto()+ "\n";
+        }else{
+            cadena = "El coche no está siendo usado por ningún piloto\n";
+        }
         cadena += "Ingenieros que están a cargo de este coche: \n";
         for(Ingeniero i : this.miControlador.getCoches().get(fila).getIngenieros_coche()){
             cadena += i.getIdIngeniero() + "\n";
@@ -1777,9 +1828,22 @@ public class Ventana1 extends javax.swing.JFrame {
         String fecha = jTextField_fechnac_ingeniero.getText();
         double sueldo = Double.parseDouble(jTextField_sueldo_ingeniero.getText());
         
-        this.miControlador.getIngenieros().get(fila).setIdIngeniero(idIngeniero);
-        this.miControlador.getIngenieros().get(fila).setFechaNacimiento(fecha);
-        this.miControlador.getIngenieros().get(fila).setSueldo(sueldo);
+        Ingeniero unIngeniero = new Ingeniero(idIngeniero, fecha, sueldo);
+        
+        if((idIngeniero.equals(this.misIngenieros.get(fila).getIdIngeniero()))){
+            this.miControlador.getIngenieros().get(fila).setIdIngeniero(idIngeniero);
+            this.miControlador.getIngenieros().get(fila).setFechaNacimiento(fecha);
+            this.miControlador.getIngenieros().get(fila).setSueldo(sueldo);
+        
+        }else if(this.miControlador.comprobarSiIngenieroExiste(unIngeniero)){
+            JOptionPane.showMessageDialog(null, "El ingeniero ya existe en el sistema, introduzca otro ID");
+        }else{
+            this.miControlador.getIngenieros().get(fila).setIdIngeniero(idIngeniero);
+            this.miControlador.getIngenieros().get(fila).setFechaNacimiento(fecha);
+            this.miControlador.getIngenieros().get(fila).setSueldo(sueldo);
+            
+        }
+        
         
         jButton_cancelar_ingeniero.setVisible(false);
         jButton_guardar_ingeniero.setVisible(false);
@@ -1808,16 +1872,37 @@ public class Ventana1 extends javax.swing.JFrame {
         int fila = jTable_ingeniero.getSelectedRow();
         String cadena ="";
         cadena += "Coches de los que está a cargo este ingeniero: \n";
-        for(Coche c : this.miControlador.getIngenieros().get(fila).getCoche_ingeniero()){
-            cadena += c.getIdCoche() + "\n";
+        if(this.miControlador.getIngenieros().get(fila).getCoche_ingeniero() != null){
+            for(Coche c : this.miControlador.getIngenieros().get(fila).getCoche_ingeniero()){
+                cadena += c.getIdCoche() + "\n";
+            }
+        }else{
+            cadena = "Este ingeniero no está a cargo de ningún coche";
         }
         JOptionPane.showMessageDialog(null, cadena);
     }//GEN-LAST:event_jButton_detalles_IngenieroMouseClicked
 
-    private void jButton_serializarProyectoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_serializarProyectoMouseClicked
+    private void jButton_borrar_ingenieroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_borrar_ingenieroMouseClicked
+        // TODO add your handling code here:
+        int fila = jTable_ingeniero.getSelectedRow();
+        
+        for(Coche c: this.miControlador.getCoches()){
+            for(int j = 0; j < c.getIngenieros_coche().size(); j++){
+                if(c.getIngenieros_coche().get(j).getIdIngeniero().equals(this.miControlador.getIngenieros().get(fila).getIdIngeniero())){
+                    c.getIngenieros_coche().remove(c.getIngenieros_coche().get(j));
+                }
+            }
+        }
+        
+       this.miControlador.borrarIngeniero(fila);
+        
+        actualizarTablasVista();
+    }//GEN-LAST:event_jButton_borrar_ingenieroMouseClicked
+
+    private void jButton1_serializarProyectoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1_serializarProyectoMouseClicked
         // TODO add your handling code here:
         this.miControlador.serializarProyecto();
-    }//GEN-LAST:event_jButton_serializarProyectoMouseClicked
+    }//GEN-LAST:event_jButton1_serializarProyectoMouseClicked
 
     private void jButton_deserializarProyectoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_deserializarProyectoMouseClicked
         // TODO add your handling code here:
@@ -1828,6 +1913,7 @@ public class Ventana1 extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1_serializarProyecto;
     private javax.swing.JButton jButton_anadirCoche_Ingeniero;
     private javax.swing.JButton jButton_anadirCoche_piloto;
     private javax.swing.JButton jButton_anadirIngeniero_Coche;
@@ -1857,14 +1943,11 @@ public class Ventana1 extends javax.swing.JFrame {
     private javax.swing.JButton jButton_guardar_equipoCarreras;
     public javax.swing.JButton jButton_guardar_informe;
     private javax.swing.JButton jButton_guardar_ingeniero;
-    private javax.swing.JButton jButton_leer_xml;
     public javax.swing.JButton jButton_modificar_coche;
     private javax.swing.JButton jButton_modificar_equipoCarreras;
     private javax.swing.JButton jButton_modificar_informe;
     public javax.swing.JButton jButton_modificar_ingeniero;
     private javax.swing.JButton jButton_modificar_piloto;
-    private javax.swing.JButton jButton_reescribir_xml;
-    private javax.swing.JButton jButton_serializarProyecto;
     private javax.swing.JComboBox<String> jComboBox_anadirCoche_Ingeniero;
     private javax.swing.JComboBox<String> jComboBox_anadirIngeniero_Coche;
     private javax.swing.JComboBox<String> jComboBox_anadirPiloto_EquiposCarreras;

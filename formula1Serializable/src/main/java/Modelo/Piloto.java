@@ -9,13 +9,12 @@ import Modelo.EquipoCarreras;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import Modelo.Coche;
-import java.io.Serializable;
 
 /**
  *
  * @author johnm
  */
-public class Piloto implements Serializable{
+public class Piloto {
     private String idPiloto;
     private String nombre;
     private int edad;

@@ -60,68 +60,63 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace pref="368" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jScrollPane1" min="-2" pref="452" max="-2" attributes="0"/>
-                                  <Component id="jButton_detalles_EquipoCarreras" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jButton_modificar_equipoCarreras" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jButton_borrar_equipoCarreras" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jButton_guardar_equipoCarreras" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jButton1_serializarProyecto" min="-2" pref="138" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jButton_deserializarProyecto" alignment="1" min="-2" pref="181" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jComboBox_anadirPiloto_EquiposCarreras" min="-2" pref="122" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="jButton_anadirPiloto_EquipoCarreras" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jScrollPane1" min="-2" pref="452" max="-2" attributes="0"/>
+                                      <Component id="jButton_detalles_EquipoCarreras" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel_nombre_equipoCarreras" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel_idEquipo_equipoCarreras" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jButton_modificar_equipoCarreras" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jButton_borrar_equipoCarreras" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jButton_guardar_equipoCarreras" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jComboBox_anadirPiloto_EquiposCarreras" min="-2" pref="122" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                          <Component id="jButton_anadirPiloto_EquipoCarreras" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jTextField_idEquipo_equipoCarreras" pref="245" max="32767" attributes="0"/>
-                                          <Component id="jTextField_nombre_equipoCarreras" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel_nombre_equipoCarreras" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel_idEquipo_equipoCarreras" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="jTextField_idEquipo_equipoCarreras" pref="245" max="32767" attributes="0"/>
+                                              <Component id="jTextField_nombre_equipoCarreras" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace pref="33" max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="jButton_cancelar_equipoCarreras" max="32767" attributes="0"/>
+                                              <Component id="jButton_guardarModificacion_equipoCarreras" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jButton_cancelar_equipoCarreras" max="32767" attributes="0"/>
-                                          <Component id="jButton_guardarModificacion_equipoCarreras" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="43" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jButton_leer_xml" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jButton_serializarProyecto" min="-2" pref="139" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jButton_reescribir_xml" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jButton_deserializarProyecto" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <EmptySpace pref="44" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -162,15 +157,9 @@
                           <Component id="jButton_anadirPiloto_EquipoCarreras" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="48" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton_leer_xml" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton_serializarProyecto" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jButton1_serializarProyecto" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton_reescribir_xml" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton_deserializarProyecto" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jButton_deserializarProyecto" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -279,23 +268,6 @@
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton_guardarModificacion_equipoCarrerasMouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton_leer_xml">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="LeerXMLFormula1"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_leer_xmlActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="jButton_reescribir_xml">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="ReescribirXML"/>
-              </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton_reescribir_xmlMouseClicked"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_reescribir_xmlActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JButton" name="jButton_detalles_EquipoCarreras">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ver detalles de un equipo"/>
@@ -334,17 +306,17 @@
                 <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="jButton_anadirPiloto_EquipoCarreras.setVisible(false);"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton_serializarProyecto">
+            <Component class="javax.swing.JButton" name="jButton1_serializarProyecto">
               <Properties>
-                <Property name="text" type="java.lang.String" value="SerializarProyecto"/>
+                <Property name="text" type="java.lang.String" value="Serializar Proyecto"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton_serializarProyectoMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton1_serializarProyectoMouseClicked"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton_deserializarProyecto">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Leer Objetos Serializables"/>
+                <Property name="text" type="java.lang.String" value="Deserializar Proyecto"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton_deserializarProyectoMouseClicked"/>
@@ -1329,6 +1301,7 @@
                 <Property name="text" type="java.lang.String" value="Borrar"/>
               </Properties>
               <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton_borrar_ingenieroMouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_borrar_ingenieroActionPerformed"/>
               </Events>
               <AuxValues>

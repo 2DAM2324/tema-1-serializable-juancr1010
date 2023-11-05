@@ -153,6 +153,10 @@ public class Controlador {
         this.coches.remove(pos);
     }
     
+    public void borrarIngeniero(int pos){
+        this.ingenieros.remove(pos);
+    }
+    
     public void modificarEquipoCarreras(String id, String nombre, int pos){
         this.equipos.get(pos).setIdEquipo(id);
         this.equipos.get(pos).setNombre(nombre);
@@ -165,7 +169,7 @@ public class Controlador {
     public boolean comprobarSiEquipoExiste(EquipoCarreras unEquipo){
         boolean existe = false;
         for(int i = 0; i < this.equipos.size(); i++){
-            if(unEquipo.getIdEquipo() == this.equipos.get(i).getIdEquipo()){
+            if(unEquipo.getIdEquipo().equals(this.equipos.get(i).getIdEquipo())){
                 existe = true;
             }
         }
@@ -175,7 +179,7 @@ public class Controlador {
     public boolean comprobarSiPilotoExiste(Piloto unPiloto){
         boolean existe = false;
         for(int i = 0; i < this.pilotos.size(); i++){
-            if(unPiloto.getIdPiloto()== this.pilotos.get(i).getIdPiloto()){
+            if(unPiloto.getIdPiloto().equals( this.pilotos.get(i).getIdPiloto())){
                 existe = true;
             }
         }
@@ -185,7 +189,7 @@ public class Controlador {
     public boolean comprobarSiInformeExiste(Informe unInforme){
         boolean existe = false;
         for(int i = 0; i < this.informes.size(); i++){
-            if(unInforme.getIdInforme()== this.informes.get(i).getIdInforme()){
+            if(unInforme.getIdInforme().equals(this.informes.get(i).getIdInforme())){
                 existe = true;
             }
         }
@@ -195,7 +199,7 @@ public class Controlador {
     public boolean comprobarSiCocheExiste(Coche unCoche){
         boolean existe = false;
         for(int i = 0; i < this.coches.size(); i++){
-            if(unCoche.getIdCoche()== this.coches.get(i).getIdCoche()){
+            if(unCoche.getIdCoche().equals(this.coches.get(i).getIdCoche())){
                 existe = true;
             }
         }
@@ -207,13 +211,12 @@ public class Controlador {
     public boolean comprobarSiIngenieroExiste(Ingeniero unIngeniero){
         boolean existe = false;
         for(int i = 0; i < this.ingenieros.size(); i++){
-            if(unIngeniero.getIdIngeniero()== this.ingenieros.get(i).getIdIngeniero()){
+            if(unIngeniero.getIdIngeniero().equals(this.ingenieros.get(i).getIdIngeniero())){
                 existe = true;
             }
         }
         return existe;
     }
-    
     
     public void serializarEquipos(){
         ObjectOutputStream serializador = null;
@@ -427,11 +430,11 @@ public class Controlador {
         deserializarEquipos();
     }
     
+    
+    
     public void leerXML(){
-        
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         Document documento = null;
-        
 
         try{
             DocumentBuilder builder = factory.newDocumentBuilder();
@@ -460,70 +463,90 @@ public class Controlador {
                 
                 //Creo el arrayList de pilotos que voy a leer de cada equipo en el XML
                 ArrayList<Piloto> pilotos = new ArrayList<Piloto>();
-                NodeList pilotosNodeList = elemento.getElementsByTagName("pilotos");
+                NodeList pilotosNodeList = elemento.getElementsByTagName("piloto");
                 
                 for(int j = 0; j < pilotosNodeList.getLength(); j++){
                     Node pilotoNode = pilotosNodeList.item(j);
                     if(pilotoNode.getNodeType() == Node.ELEMENT_NODE){
                         //Leo los atributos básicos de cada piloto.
                         Element pilotoElement = (Element) pilotoNode;
-                        String idPiloto = pilotoElement.getElementsByTagName("idPiloto").item(0).getChildNodes().item(0).getNodeValue();
-                        String nombrePiloto = pilotoElement.getElementsByTagName("nombre").item(0).getChildNodes().item(0).getNodeValue();
-                        int edad = Integer.parseInt(pilotoElement.getElementsByTagName("edad").item(0).getChildNodes().item(0).getNodeValue());
-                        
+                        String idPiloto = "";
+                        String nombrePiloto = "";
+                        int edad = 0;
+                        if(pilotoElement != null && pilotoElement.hasChildNodes()){
+                           idPiloto = pilotoElement.getElementsByTagName("idPiloto").item(0).getChildNodes().item(0).getNodeValue();
+                           nombrePiloto = pilotoElement.getElementsByTagName("nombre").item(0).getChildNodes().item(0).getNodeValue();
+                           edad = Integer.parseInt(pilotoElement.getElementsByTagName("edad").item(0).getChildNodes().item(0).getNodeValue());
+                        }
                         //Leo el coche de cada piloto.
                         Element cocheElement = (Element) pilotoElement.getElementsByTagName("coche").item(0);
-                        String idCoche = cocheElement.getElementsByTagName("idCoche").item(0).getChildNodes().item(0).getNodeValue();
-                        String marcaCoche = cocheElement.getElementsByTagName("marca").item(0).getChildNodes().item(0).getNodeValue();
-                        String modeloCoche = cocheElement.getElementsByTagName("modelo").item(0).getChildNodes().item(0).getNodeValue();
-                        Coche coche = new Coche(idCoche, marcaCoche, modeloCoche);
+                        String idCoche = "";
+                        String marcaCoche = "";
+                        String modeloCoche = "";
+                        Coche coche = null;
+                        if(cocheElement != null && cocheElement.hasChildNodes()){
+                            idCoche = cocheElement.getElementsByTagName("idCoche").item(0).getChildNodes().item(0).getNodeValue();
+                            marcaCoche = cocheElement.getElementsByTagName("marca").item(0).getChildNodes().item(0).getNodeValue();
+                            modeloCoche = cocheElement.getElementsByTagName("modelo").item(0).getChildNodes().item(0).getNodeValue();
+                            coche = new Coche(idCoche, marcaCoche, modeloCoche);
                         
                         //De cada coche leo sus ingenieros e introduzco los ingenieros en el coche y el coche en los ingenieros.
-                        NodeList ingenierosNodeList = cocheElement.getElementsByTagName("ingeniero");
-                        
-                        for(int k = 0; k < ingenierosNodeList.getLength(); k++ ){
-                            Node ingenieroNode = ingenierosNodeList.item(k);
-                            Element ingenieroElement = (Element) ingenieroNode;
-                            String idIngeniero = ingenieroElement.getElementsByTagName("idIngeniero").item(0).getChildNodes().item(0).getNodeValue();
-                            String fechaNacimientoIngeniero = ingenieroElement.getElementsByTagName("fecha_de_nacimiento").item(0).getChildNodes().item(0).getNodeValue();
-                            double sueldoIngeniero = Double.parseDouble(ingenieroElement.getElementsByTagName("sueldo").item(0).getChildNodes().item(0).getNodeValue());
-                            Ingeniero ingeniero = new Ingeniero(idIngeniero, fechaNacimientoIngeniero, sueldoIngeniero);
-                            ingeniero.getCoche_ingeniero().add(coche);
-                            coche.getIngenieros_coche().add(ingeniero);
-                            if(comprobarSiIngenieroExiste(ingeniero) == false){
-                                this.ingenieros.add(ingeniero);
+                            NodeList ingenierosNodeList = cocheElement.getElementsByTagName("ingeniero");
+
+                            if(ingenierosNodeList != null){
+                                for(int k = 0; k < ingenierosNodeList.getLength(); k++ ){
+                                    Node ingenieroNode = ingenierosNodeList.item(k);
+                                    Element ingenieroElement = (Element) ingenieroNode;
+                                    String idIngeniero = ingenieroElement.getElementsByTagName("idIngeniero").item(0).getChildNodes().item(0).getNodeValue();
+                                    String fechaNacimientoIngeniero = ingenieroElement.getElementsByTagName("fecha_de_nacimiento").item(0).getChildNodes().item(0).getNodeValue();
+                                    double sueldoIngeniero = Double.parseDouble(ingenieroElement.getElementsByTagName("sueldo").item(0).getChildNodes().item(0).getNodeValue());
+                                    Ingeniero ingeniero = new Ingeniero(idIngeniero, fechaNacimientoIngeniero, sueldoIngeniero);
+                                    ingeniero.getCoche_ingeniero().add(coche);
+                                    coche.getIngenieros_coche().add(ingeniero);
+                                    if(comprobarSiIngenieroExiste(ingeniero) == false){
+                                        this.ingenieros.add(ingeniero);
+                                    }
+                                }
                             }
                         }
-                        
-                        if(comprobarSiCocheExiste(coche) == false){
+                        if(coche != null && comprobarSiCocheExiste(coche) == false){
                             this.coches.add(coche);
                         }
                         
                         //Leo el genera que va a estar en cada piloto.
                         Element generaElement = (Element) pilotoElement.getElementsByTagName("genera").item(0);
-                        String fecha = generaElement.getElementsByTagName("fecha").item(0).getChildNodes().item(0).getNodeValue();
+                        String fecha = "";
+                        String idInforme = "";
+                        String descripcionInforme = "";
+                        Informe informe = null;
+                        Genera genera = null;
+                        if(generaElement != null && generaElement.hasChildNodes()){
+                            fecha = generaElement.getElementsByTagName("fecha").item(0).getChildNodes().item(0).getNodeValue();
                         
-                        //Leo el informe que va a estar dentro del genera del piloto ya que los genera él.
-                        Element informeElement = (Element) generaElement.getElementsByTagName("informe").item(0);
-                        String idInforme = informeElement.getElementsByTagName("idInforme").item(0).getChildNodes().item(0).getNodeValue();
-                        String descripcionInforme = informeElement.getElementsByTagName("descripcion").item(0).getChildNodes().item(0).getNodeValue();
-                        
-                        
-                        Informe informe = new Informe(idInforme, descripcionInforme);
-                        
-                        Genera genera = new Genera(fecha, informe);
+                            //Leo el informe que va a estar dentro del genera del piloto ya que los genera él.
+                            Element informeElement = (Element) generaElement.getElementsByTagName("informe").item(0);
+                            idInforme = informeElement.getElementsByTagName("idInforme").item(0).getChildNodes().item(0).getNodeValue();
+                            descripcionInforme = informeElement.getElementsByTagName("descripcion").item(0).getChildNodes().item(0).getNodeValue();
+                            informe = new Informe(idInforme, descripcionInforme);
+                            genera = new Genera(fecha, informe);
+                        }
                         
                         Piloto piloto = new Piloto(idPiloto, nombrePiloto, edad, genera, coche);
                         
-                        coche.setPiloto(piloto);
+                        if(coche != null){
+                            coche.setPiloto(piloto);
+                        }
                         //Asigno los valores que quedan pendientes por establecer que básicamente son los objetos.
-                        genera.setPiloto_genera(piloto);
-                        informe.setGenera_en_informe(genera);
-                        genera.setInforme_genera(informe);
-                        informe.setGenera_en_informe(genera);
-                        piloto.setGenera_en_piloto(genera);
                         
-                        if(comprobarSiInformeExiste(informe) == false ){
+                        if(genera != null){
+                            genera.setPiloto_genera(piloto);
+                            informe.setGenera_en_informe(genera);
+                            genera.setInforme_genera(informe);
+                            informe.setGenera_en_informe(genera);
+                            piloto.setGenera_en_piloto(genera);
+                        }
+                        
+                        if(informe != null && comprobarSiInformeExiste(informe) == false ){
                             this.informes.add(informe);
                         }
                         
@@ -534,7 +557,7 @@ public class Controlador {
                         piloto.setEquipo_piloto(nuevoEquipo);
                         nuevoEquipo.getPilotos().add(piloto);
                         
-                        if(comprobarSiPilotoExiste(piloto) == false){
+                        if(piloto != null && comprobarSiPilotoExiste(piloto) == false){
                             this.pilotos.add(piloto);
                         }
                     }
@@ -622,59 +645,62 @@ public class Controlador {
                     
                     nodoGenera = documento.createElement("genera");
                     nodoPiloto.appendChild(nodoGenera);
-                    nodoDatos = documento.createElement("fecha");
-                    nodoGenera.appendChild(nodoDatos);
-                    texto = documento.createTextNode(piloto.getGenera_en_piloto().getFecha());
-                    nodoDatos.appendChild(texto);
-                    
-                    nodoInforme = documento.createElement("informe");
-                    nodoGenera.appendChild(nodoInforme);
-                    nodoDatos = documento.createElement("idInforme");
-                    nodoInforme.appendChild(nodoDatos);
-                    texto = documento.createTextNode(piloto.getGenera_en_piloto().getInforme_genera().getIdInforme());
-                    nodoDatos.appendChild(texto);
-                    nodoDatos = documento.createElement("descripcion");
-                    nodoInforme.appendChild(nodoDatos);
-                    texto = documento.createTextNode(piloto.getGenera_en_piloto().getInforme_genera().getDescripcion());
-                    nodoDatos.appendChild(texto);
-                    
-                    nodoCoche = documento.createElement("coche");
-                    nodoPiloto.appendChild(nodoCoche);
-                    nodoDatos = documento.createElement("idCoche");
-                    nodoCoche.appendChild(nodoDatos);
-                    texto = documento.createTextNode(piloto.getCoche_piloto().getIdCoche());
-                    nodoDatos.appendChild(texto);
-                    nodoDatos = documento.createElement("modelo");
-                    nodoCoche.appendChild(nodoDatos);
-                    texto = documento.createTextNode(piloto.getCoche_piloto().getModelo());
-                    nodoDatos.appendChild(texto);
-                    nodoDatos = documento.createElement("marca");
-                    nodoCoche.appendChild(nodoDatos);
-                    texto = documento.createTextNode(piloto.getCoche_piloto().getMarca());
-                    nodoDatos.appendChild(texto);
-                    
-                    nodoRaizIngenieros = documento.createElement("ingenieros");
-                    nodoCoche.appendChild(nodoRaizIngenieros);
-                    
-                    for(Ingeniero ing: piloto.getCoche_piloto().getIngenieros_coche()){
-                        nodoIngenieros = documento.createElement("ingeniero");
-                        nodoRaizIngenieros.appendChild(nodoIngenieros);
-                    
-                        
-                        nodoDatos = documento.createElement("idIngeniero");
-                        nodoIngenieros.appendChild(nodoDatos);
-                        texto = documento.createTextNode(ing.getIdIngeniero());
+                    if(piloto.getGenera_en_piloto() != null){
+                        nodoDatos = documento.createElement("fecha");
+                        nodoGenera.appendChild(nodoDatos);
+                        texto = documento.createTextNode(piloto.getGenera_en_piloto().getFecha());
                         nodoDatos.appendChild(texto);
-                        nodoDatos = documento.createElement("fecha_de_nacimiento");
-                        nodoIngenieros.appendChild(nodoDatos);
-                        texto = documento.createTextNode(ing.getFechaNacimiento());
+
+                        nodoInforme = documento.createElement("informe");
+                        nodoGenera.appendChild(nodoInforme);
+                        nodoDatos = documento.createElement("idInforme");
+                        nodoInforme.appendChild(nodoDatos);
+                        texto = documento.createTextNode(piloto.getGenera_en_piloto().getInforme_genera().getIdInforme());
                         nodoDatos.appendChild(texto);
-                        nodoDatos = documento.createElement("sueldo");
-                        nodoIngenieros.appendChild(nodoDatos);
-                        texto = documento.createTextNode(Double.toString(ing.getSueldo()));
+                        nodoDatos = documento.createElement("descripcion");
+                        nodoInforme.appendChild(nodoDatos);
+                        texto = documento.createTextNode(piloto.getGenera_en_piloto().getInforme_genera().getDescripcion());
                         nodoDatos.appendChild(texto);
                     }
+                    nodoCoche = documento.createElement("coche");
+                    nodoPiloto.appendChild(nodoCoche);
                     
+                    if(piloto.getCoche_piloto() != null){
+                        nodoDatos = documento.createElement("idCoche");
+                        nodoCoche.appendChild(nodoDatos);
+                        texto = documento.createTextNode(piloto.getCoche_piloto().getIdCoche());
+                        nodoDatos.appendChild(texto);
+                        nodoDatos = documento.createElement("modelo");
+                        nodoCoche.appendChild(nodoDatos);
+                        texto = documento.createTextNode(piloto.getCoche_piloto().getModelo());
+                        nodoDatos.appendChild(texto);
+                        nodoDatos = documento.createElement("marca");
+                        nodoCoche.appendChild(nodoDatos);
+                        texto = documento.createTextNode(piloto.getCoche_piloto().getMarca());
+                        nodoDatos.appendChild(texto);
+
+                        nodoRaizIngenieros = documento.createElement("ingenieros");
+                        nodoCoche.appendChild(nodoRaizIngenieros);
+
+                        for(Ingeniero ing: piloto.getCoche_piloto().getIngenieros_coche()){
+                            nodoIngenieros = documento.createElement("ingeniero");
+                            nodoRaizIngenieros.appendChild(nodoIngenieros);
+
+
+                            nodoDatos = documento.createElement("idIngeniero");
+                            nodoIngenieros.appendChild(nodoDatos);
+                            texto = documento.createTextNode(ing.getIdIngeniero());
+                            nodoDatos.appendChild(texto);
+                            nodoDatos = documento.createElement("fecha_de_nacimiento");
+                            nodoIngenieros.appendChild(nodoDatos);
+                            texto = documento.createTextNode(ing.getFechaNacimiento());
+                            nodoDatos.appendChild(texto);
+                            nodoDatos = documento.createElement("sueldo");
+                            nodoIngenieros.appendChild(nodoDatos);
+                            texto = documento.createTextNode(Double.toString(ing.getSueldo()));
+                            nodoDatos.appendChild(texto);
+                        }
+                    }        
                     
                     
                     

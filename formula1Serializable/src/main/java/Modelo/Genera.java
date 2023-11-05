@@ -6,13 +6,12 @@ package Modelo;
 
 import Modelo.Piloto;
 import Modelo.Informe;
-import java.io.Serializable;
 
 /**
  *
  * @author johnm
  */
-public class Genera implements Serializable {
+public class Genera {
     private String fecha;
     private Piloto piloto_genera;
     private Informe informe_genera;
